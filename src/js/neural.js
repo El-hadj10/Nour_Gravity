@@ -255,7 +255,8 @@
                 const p = projected[i];
                 const e = n.energy;
                 const pulse = 1 + Math.sin(n.phase) * 0.25;
-                const radius = (1.6 + e * 2.4) * p.scale * pulse;
+                let radius = (1.6 + e * 2.4) * p.scale * pulse;
+                if (radius < 0.1) radius = 0.1;
 
                 const rC = Math.round(br + (ar - br) * e);
                 const gC = Math.round(bg + (ag - bg) * e);
@@ -263,12 +264,14 @@
 
                 // halo si nœud actif
                 if (e > 0.05) {
-                    const grd = ctx.createRadialGradient(p.sx, p.sy, 0, p.sx, p.sy, radius * 6);
+                    let haloRadius = radius * 6;
+                    if (haloRadius < 0.1) haloRadius = 0.1;
+                    const grd = ctx.createRadialGradient(p.sx, p.sy, 0, p.sx, p.sy, haloRadius);
                     grd.addColorStop(0, `rgba(${rC},${gC},${bC},${0.45 * e})`);
                     grd.addColorStop(1, `rgba(${rC},${gC},${bC},0)`);
                     ctx.fillStyle = grd;
                     ctx.beginPath();
-                    ctx.arc(p.sx, p.sy, radius * 6, 0, TAU);
+                    ctx.arc(p.sx, p.sy, haloRadius, 0, TAU);
                     ctx.fill();
                 }
 
