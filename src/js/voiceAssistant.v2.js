@@ -23,7 +23,7 @@ class VoiceAssistant {
     this.recognition = new SpeechRecognition();
     this.recognition.lang = this.lang;
     this.recognition.interimResults = false;
-    this.recognition.continuous = false;
+    this.recognition.continuous = true;
     this.recognition.onresult = (event) => {
       const transcript = event.results[0][0].transcript.trim();
       if (this.onTranscript) this.onTranscript(transcript);
