@@ -1,5 +1,5 @@
 .
-./CLAUDE.md
+
 ./.gitignore
 ./README_PROFILE_GITHUB
 ./package-lock.json

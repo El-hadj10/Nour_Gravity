@@ -33,7 +33,7 @@ function runBootSequence() {
         'Initialisation du champ neuronal…',
         'Calibrage de la matrice Al-Baqarah…',
         'Synchronisation avec la Source Unique…',
-        'Tunnel sécurisé → Anthropic OK',
+        'Tunnel sécurisé OK',
         'Alignement Nour_Gravity prêt.',
     ];
     let i = 0;

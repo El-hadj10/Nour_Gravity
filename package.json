@@ -19,7 +19,6 @@
   },
   "homepage": "https://github.com/El-hadj10/Nour_Gravity#readme",
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.96.0",
     "dotenv": "^17.4.2",
     "express": "^5.2.1"
   }
