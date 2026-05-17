@@ -1,5 +1,4 @@
-// === Assistant vocal Nour_Gravity v2.0 ===
-import VoiceAssistant from './voiceAssistant.v2.js';
+// === Assistant vocal Nour_Gravity v2.0 (chargement global) ===
 
 // Création du bouton micro flottant
 const micBtn = document.createElement('button');
@@ -52,7 +51,7 @@ halo.style.transition = 'opacity 0.2s';
 document.body.appendChild(halo);
 
 // Instanciation de l'assistant vocal
-const va = new VoiceAssistant({
+const va = new window.VoiceAssistant({
     onTranscript: (txt) => {
         // Affiche la commande vocale dans la console ou dans l'UI
         console.log('🎤 Commande vocale :', txt);

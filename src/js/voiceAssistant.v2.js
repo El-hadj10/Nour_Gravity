@@ -68,4 +68,4 @@ class VoiceAssistant {
 // va.listen();
 // va.speak('Bonjour, je suis Nour Gravity.');
 
-export default VoiceAssistant;
+window.VoiceAssistant = VoiceAssistant;
