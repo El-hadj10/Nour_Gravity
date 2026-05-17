@@ -149,17 +149,18 @@ Nour_Gravity/
 <td align="center">
 
 ### ✦ NOUR_GRAVITY — CORE
-**`server.js · index.html · neural.js · main.js`**
+> 🌙 **Projet d'alignement IA & spiritualité — version vivante.**
 Pure Vanilla JS · Express 5 · No bundler
 Canvas API · dotenv
 Tailwind CDN · `mix-blend-mode` · perspective
 
 </td>
 <td align="center">
-
-### ✍️ TYPEWRITER + BURSTS
-- Texte révélé caractère par caractère
-- Caret clignotant ambré
+Le projet est développé en **Node.js + Express + Vanilla JS** — sans framework front, sans build step — et s'appuie sur :
+- **Canvas API** — champ neuronal 5D plein-écran (perspective + temps + champ de force du curseur)
+- **Tailwind CSS** via CDN — styling instantané, aucun pipeline
+- **dotenv** — clé API isolée côté serveur, jamais exposée au client
+...
 - `neuralField.burst(x, y, energy)`
 - Onde d'activation depuis chaque réponse
 - Classe `fresh-row` (glow 1.6 s)
