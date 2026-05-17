@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nour_Gravity — L'Alignement Fluide</title>
+    <title>Nour_Gravity // J.A.R.V.I.S Protocol — L'Alignement Fluide</title>
     <!-- Intégration de Tailwind CSS pour un stylisme instantané et de pointe -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -23,7 +23,24 @@
 </head>
 <body class="min-h-screen bg-[#0B0C10] text-white font-sans antialiased overflow-x-hidden relative">
 
-    <!-- Éléments d'arrière-plan dynamiques (Effet Antigravity) -->
+    <!-- Boot sequence : disparaît après l'init du champ neuronal -->
+    <div id="boot-overlay" class="boot-overlay">
+        <div class="boot-ring"></div>
+        <div class="text-xs tracking-[0.4em] text-amber-400 font-mono uppercase">NOUR_GRAVITY</div>
+        <div id="boot-log" class="boot-log">Initialisation du champ neuronal…</div>
+    </div>
+
+    <!-- Champ neuronal vivant (canvas 5D) en arrière-plan -->
+    <canvas id="neural-canvas" aria-hidden="true"></canvas>
+
+    <!-- Couche HUD : coins + scan-line -->
+    <div class="hud-corner tl"></div>
+    <div class="hud-corner tr"></div>
+    <div class="hud-corner bl"></div>
+    <div class="hud-corner br"></div>
+    <div class="scan-line"></div>
+
+    <!-- Halos doux conservés (par-dessus le canvas, sous le HUD) -->
     <div class="absolute top-[-10%] left-[-10%] w-[60vw] h-[60vw] bg-[radial-gradient(circle,_rgba(245,158,11,0.08)_0%,_transparent_70%)] rounded-full blur-[120px] animate-pulse-slow pointer-events-none"></div>
     <div class="absolute bottom-[-10%] right-[-10%] w-[70vw] h-[70vw] bg-[radial-gradient(circle,_rgba(59,130,246,0.06)_0%,_transparent_70%)] rounded-full blur-[150px] pointer-events-none"></div>
 
@@ -31,10 +48,19 @@
     <header class="w-full max-w-7xl mx-auto px-6 py-5 flex justify-between items-center border-b border-white/5 backdrop-blur-md sticky top-0 z-50">
         <div class="flex items-center gap-3">
             <span class="text-2xl animate-spin-slow">🌙</span>
-            <h1 class="text-xl font-bold tracking-widest bg-gradient-to-r from-amber-400 via-amber-200 to-white bg-clip-text text-transparent">NOUR_GRAVITY</h1>
+            <h1 class="jarvis-title text-xl font-bold tracking-widest bg-gradient-to-r from-amber-400 via-amber-200 to-white bg-clip-text text-transparent">
+                NOUR_GRAVITY
+                <span class="text-[10px] tracking-[0.4em] text-cyan-300/70 ml-2 font-mono">// J.A.R.V.I.S</span>
+            </h1>
         </div>
-        <div class="text-xs font-mono text-white/50 tracking-widest bg-white/[0.02] border border-white/5 px-4 py-2 rounded-full">
-            CYCLE VIBRATOIRE : <span class="text-amber-400 font-bold">7</span>
+        <div class="flex items-center gap-3">
+            <div class="text-[10px] font-mono text-cyan-300/70 tracking-widest bg-cyan-400/[0.04] border border-cyan-400/20 px-3 py-2 rounded-full flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+                NEURAL FIELD : <span id="neural-status" class="text-cyan-200 font-bold">ONLINE</span>
+            </div>
+            <div class="text-xs font-mono text-white/50 tracking-widest bg-white/[0.02] border border-white/5 px-4 py-2 rounded-full">
+                CYCLE VIBRATOIRE : <span class="text-amber-400 font-bold">7</span>
+            </div>
         </div>
     </header>
 
@@ -154,7 +180,9 @@
 
     </main>
 
-    <!-- Liaison avec ton futur fichier JavaScript principal -->
+    <!-- Moteur du champ neuronal 5D (canvas plein-écran réactif au curseur) -->
+    <script src="js/neural.js"></script>
+    <!-- Logique des deux flux d'invocation + boot + typewriter + bursts -->
     <script src="js/main.js"></script>
 </body>
 </html>
