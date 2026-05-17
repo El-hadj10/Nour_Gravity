@@ -1,0 +1,26 @@
+{
+  "name": "nour_gravity",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/El-hadj10/Nour_Gravity.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/El-hadj10/Nour_Gravity/issues"
+  },
+  "homepage": "https://github.com/El-hadj10/Nour_Gravity#readme",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.96.0",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1"
+  }
+}

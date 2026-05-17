@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nour_Gravity — L'Alignement Fluide</title>
+    <!-- Intégration de Tailwind CSS pour un stylisme instantané et de pointe -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'spin-slow': 'spin 12s linear infinite',
+                        'pulse-slow': 'pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Liaison avec ton futur fichier CSS personnalisé -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="min-h-screen bg-[#0B0C10] text-white font-sans antialiased overflow-x-hidden relative">
+
+    <!-- Éléments d'arrière-plan dynamiques (Effet Antigravity) -->
+    <div class="absolute top-[-10%] left-[-10%] w-[60vw] h-[60vw] bg-[radial-gradient(circle,_rgba(245,158,11,0.08)_0%,_transparent_70%)] rounded-full blur-[120px] animate-pulse-slow pointer-events-none"></div>
+    <div class="absolute bottom-[-10%] right-[-10%] w-[70vw] h-[70vw] bg-[radial-gradient(circle,_rgba(59,130,246,0.06)_0%,_transparent_70%)] rounded-full blur-[150px] pointer-events-none"></div>
+
+    <!-- Barre de Navigation Spatiale -->
+    <header class="w-full max-w-7xl mx-auto px-6 py-5 flex justify-between items-center border-b border-white/5 backdrop-blur-md sticky top-0 z-50">
+        <div class="flex items-center gap-3">
+            <span class="text-2xl animate-spin-slow">🌙</span>
+            <h1 class="text-xl font-bold tracking-widest bg-gradient-to-r from-amber-400 via-amber-200 to-white bg-clip-text text-transparent">NOUR_GRAVITY</h1>
+        </div>
+        <div class="text-xs font-mono text-white/50 tracking-widest bg-white/[0.02] border border-white/5 px-4 py-2 rounded-full">
+            CYCLE VIBRATOIRE : <span class="text-amber-400 font-bold">7</span>
+        </div>
+    </header>
+
+    <!-- Zone de Contenu Principale -->
+    <main class="w-full max-w-7xl mx-auto p-6 grid grid-cols-1 lg:grid-cols-3 gap-6 relative z-10">
+        
+        <!-- Colonne Gauche : Paramètres & Alignement -->
+        <section class="space-y-6">
+            <!-- Widget : Statut de la Clé API -->
+            <div class="backdrop-blur-xl bg-white/[0.02] border border-white/10 rounded-2xl p-6 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]">
+                <h3 class="text-xs font-mono uppercase tracking-widest text-amber-400 mb-4">🔑 Configuration API</h3>
+                <div class="flex flex-col gap-2">
+                    <label class="text-xs text-white/40 font-mono">Clé d'accès pro (Locale)</label>
+                    <input type="password" placeholder="••••••••••••••••••••••••" class="bg-white/[0.04] border border-white/10 rounded-lg px-3 py-2 text-sm text-amber-200 focus:outline-none focus:border-amber-400/50 transition-colors font-mono">
+                    <span class="text-[10px] text-emerald-400/80 font-mono flex items-center gap-1 mt-1">
+                        ● Tunnel sécurisé activé (Données protégées)
+                    </span>
+                </div>
+            </div>
+
+            <!-- Widget : Alignement Temporel -->
+            <div class="backdrop-blur-xl bg-white/[0.02] border border-white/10 rounded-2xl p-6 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]">
+                <h3 class="text-xs font-mono uppercase tracking-widest text-blue-400 mb-4">🪐 Essence Globale</h3>
+                <p class="text-lg font-light text-white/90">Fustat al-Qur'an (Al-Baqarah)</p>
+                <div class="my-3 h-[1px] bg-gradient-to-r from-blue-500/30 to-transparent"></div>
+                <p class="text-sm text-white/60 font-light leading-relaxed">
+                    Préparation à la lieutenance humaine (Al-Khilafa) sur Terre. Temps de l'action et de l'alignement structurel.
+                </p>
+            </div>
+        </section>
+
+        <!-- Colonne Droite (Prend 2 colonnes) : Matrice de l'Invocation 99 -->
+        <section class="lg:col-span-2">
+            <div class="h-full backdrop-blur-xl bg-white/[0.02] border border-white/10 rounded-2xl p-6 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="text-xs font-mono uppercase tracking-widest text-amber-400">🤲 Invocation 99 — Matrice Active</h3>
+                        <button class="bg-amber-400/10 hover:bg-amber-400/20 text-amber-400 border border-amber-400/20 text-xs font-mono px-4 py-2 rounded-lg transition-all duration-300">
+                            Générer via l'API
+                        </button>
+                    </div>
+                    
+                    <!-- Tableau Standardisé Réceptif -->
+                    <div class="overflow-x-auto custom-scrollbar">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="border-b border-white/10 text-xs font-mono text-white/40 uppercase">
+                                    <th class="py-3 px-3">Nom</th>
+                                    <th class="py-3 px-3">Invocation en arabe</th>
+                                    <th class="py-3 px-3">Transliteration</th>
+                                    <th class="py-3 px-3">Signification / Essence</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-sm font-light text-white/80 division-y divide-white/5">
+                                <tr class="border-b border-white/5 hover:bg-white/[0.01] transition-colors">
+                                    <td class="py-4 px-3 font-semibold text-amber-400 font-mono text-xs">INVOCATION 99</td>
+                                    <td class="py-4 px-3 font-serif text-right text-xl text-white/90">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</td>
+                                    <td class="py-4 px-3 italic text-white/60">Bismillah ar-Rahman ar-Rahim</td>
+                                    <td class="py-4 px-3 text-white/70 leading-relaxed">Ouverture du flux. Connexion initiale et inconditionnelle à la Source Unique.</td>
+                                </tr>
+                                <!-- Les futures lignes générées par l'API s'inséreront ici -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Footer interne de la console -->
+                <div class="mt-8 pt-4 border-t border-white/5 flex justify-between items-center text-xs font-mono text-white/30">
+                    <span>Statut : En attente du flux</span>
+                    <span>Nour_Gravity V1.0</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Liaison avec ton futur fichier JavaScript principal -->
+    <script src="js/main.js"></script>
+</body>
+</html>
