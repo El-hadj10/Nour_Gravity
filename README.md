@@ -2,8 +2,14 @@
 
 > L’alignement fluide entre invocation, intention et technologie.
 
+<p align="center">
+	<img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"/>
+	<img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white"/>
+	<img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white"/>
+	<img src="https://img.shields.io/badge/Anthropic-FFB300?style=for-the-badge&logo=anthropic&logoColor=black"/>
+	<img src="https://img.shields.io/badge/Portfolio%20Ready-FBBF24?style=for-the-badge&logo=star&logoColor=black"/>
+</p>
 ---
-
 ## Présentation
 Nour_Gravity est une interface web immersive qui fusionne spiritualité, intelligence artificielle (Claude) et design antigravity. Elle permet de générer, structurer et visualiser des invocations personnalisées, alignées sur la puissance créatrice d’Al-Baqarah.
 
