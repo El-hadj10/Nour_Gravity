@@ -1,3 +1,86 @@
+// === Assistant vocal Nour_Gravity v2.0 ===
+import VoiceAssistant from './voiceAssistant.v2.js';
+
+// Création du bouton micro flottant
+const micBtn = document.createElement('button');
+micBtn.id = 'voice-mic-btn';
+micBtn.title = 'Assistant vocal (appuyez pour parler)';
+micBtn.innerHTML = `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FBBF24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10v2a7 7 0 0 0 14 0v-2"/><line x1="12" y1="22" x2="12" y2="18"/><line x1="8" y1="22" x2="16" y2="22"/></svg>`;
+micBtn.style.position = 'fixed';
+micBtn.style.right = '2.2rem';
+micBtn.style.bottom = '2.2rem';
+micBtn.style.zIndex = '9999';
+micBtn.style.background = 'rgba(30,30,40,0.92)';
+micBtn.style.border = 'none';
+micBtn.style.borderRadius = '50%';
+micBtn.style.width = '56px';
+micBtn.style.height = '56px';
+micBtn.style.boxShadow = '0 4px 16px #0008';
+micBtn.style.cursor = 'pointer';
+micBtn.style.display = 'flex';
+micBtn.style.alignItems = 'center';
+micBtn.style.justifyContent = 'center';
+micBtn.style.transition = 'box-shadow 0.2s';
+micBtn.style.outline = 'none';
+micBtn.style.opacity = '0.92';
+micBtn.style.backdropFilter = 'blur(2px)';
+micBtn.style.userSelect = 'none';
+micBtn.style.padding = '0';
+micBtn.style.fontSize = '1.2rem';
+micBtn.style.color = '#FBBF24';
+micBtn.style.boxSizing = 'border-box';
+micBtn.style.gap = '0';
+micBtn.style.transition = 'background 0.2s, box-shadow 0.2s';
+micBtn.addEventListener('mouseenter',()=>micBtn.style.boxShadow='0 6px 24px #FBBF24AA');
+micBtn.addEventListener('mouseleave',()=>micBtn.style.boxShadow='0 4px 16px #0008');
+document.body.appendChild(micBtn);
+
+// Animation halo lors de l'écoute
+const halo = document.createElement('div');
+halo.id = 'voice-mic-halo';
+halo.style.position = 'fixed';
+halo.style.right = '2rem';
+halo.style.bottom = '2rem';
+halo.style.width = '64px';
+halo.style.height = '64px';
+halo.style.borderRadius = '50%';
+halo.style.background = 'radial-gradient(circle, #FBBF2433 0%, #FBBF2400 80%)';
+halo.style.zIndex = '9998';
+halo.style.pointerEvents = 'none';
+halo.style.opacity = '0';
+halo.style.transition = 'opacity 0.2s';
+document.body.appendChild(halo);
+
+// Instanciation de l'assistant vocal
+const va = new VoiceAssistant({
+    onTranscript: (txt) => {
+        // Affiche la commande vocale dans la console ou dans l'UI
+        console.log('🎤 Commande vocale :', txt);
+        // Exemple : va.speak('Vous avez dit : ' + txt);
+        // Tu peux ici déclencher une action selon la commande reconnue
+    },
+    onStart: () => { halo.style.opacity = '1'; },
+    onEnd: () => { halo.style.opacity = '0'; },
+    lang: 'fr-FR'
+});
+
+// Gestion du clic sur le bouton micro
+micBtn.addEventListener('click', () => {
+    if (va.isListening) {
+        va.stop();
+    } else {
+        va.listen();
+    }
+});
+
+// Optionnel : touche raccourci (Espace maintenu)
+window.addEventListener('keydown', (e) => {
+    if (e.code === 'Space' && !va.isListening) va.listen();
+});
+window.addEventListener('keyup', (e) => {
+    if (e.code === 'Space' && va.isListening) va.stop();
+});
+// === Fin assistant vocal ===
 /**
  * NOUR_GRAVITY — Moteur d'interactivité, de flux séquentiel et d'Invocation Finale
  * Version Intégrale Connectée V3 — Protocole J.A.R.V.I.S
