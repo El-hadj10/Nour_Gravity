@@ -6,7 +6,7 @@
   <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" />
   <img src="https://img.shields.io/badge/Express_5-000000?style=for-the-badge&logo=express&logoColor=white" />
   <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" />
-  <img src="https://img.shields.io/badge/Anthropic_Claude_3.5-FFB300?style=for-the-badge&logo=anthropic&logoColor=black" />
+  
   <img src="https://img.shields.io/badge/Canvas_API-ff6600?style=for-the-badge&logo=html5&logoColor=white" />
   <img src="https://img.shields.io/badge/Vanilla_JS-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
   <img src="https://img.shields.io/badge/HUD_J.A.R.V.I.S-78c8ff?style=for-the-badge&logo=cyberdefenders&logoColor=black" />
@@ -34,7 +34,7 @@
 
 Le projet est développé en **Node.js + Express + Vanilla JS** — sans framework front, sans build step — et s'appuie sur :
 
-- **Anthropic Claude 3.5 Sonnet** — moteur d'émanation des invocations (deux flux distincts)
+
 - **Canvas API** — champ neuronal 5D plein-écran (perspective + temps + champ de force du curseur)
 - **Tailwind CSS** via CDN — styling instantané, aucun pipeline
 - **dotenv** — clé API isolée côté serveur, jamais exposée au client
@@ -56,7 +56,7 @@ Le projet est développé en **Node.js + Express + Vanilla JS** — sans framewo
 
 ```
 Nour_Gravity/
-├── server.js                ~114 lignes  ─ Express 5 · 2 routes IA · proxy Anthropic · /health
+├── server.js                ~114 lignes  ─ Express 5 · 2 routes IA · /health
 ├── src/
 │   ├── index.html           ~187 lignes  ─ HUD · canvas neuronal · 2 tables · boot overlay
 │   ├── css/
@@ -64,9 +64,9 @@ Nour_Gravity/
 │   └── js/
 │       ├── neural.js        ~317 lignes  ─ Champ neuronal 5D · pulses · burst()
 │       └── main.js          ~320 lignes  ─ Boot · 2 flux IA · typewriter · bursts
-├── CLAUDE.md                              ─ Guide d'orientation pour Claude Code
+
 ├── PROJECT_INDEX_ALL.txt                  ─ Index complet du projet
-├── package.json                           ─ express · @anthropic-ai/sdk · dotenv
+├── package.json                           ─ express · dotenv
 └── .env                                   ─ NOUR_GRAVITY_API_KEY (gitignoré)
 ```
 
@@ -93,8 +93,8 @@ Nour_Gravity/
    ┌────┴─────┐            ┌───────┴───────┐           ┌────────┴────────┐
    │          │            │               │           │                 │
    ▼          ▼            ▼               ▼           ▼                 ▼
- /api      Anthropic    Canvas 5D       2 tables    neural.js         main.js
- /flux-    Claude 3.5   HUD corners     Boot         Champ vivant     Boot + bursts
+ /api      Canvas 5D       2 tables    neural.js         main.js
+ /flux-    HUD corners     Boot         Champ vivant     Boot + bursts
  /finale   Sonnet       Scan-line       Overlay      Pulses + burst() Typewriter
 ```
 
@@ -151,7 +151,7 @@ Nour_Gravity/
 ### ✦ NOUR_GRAVITY — CORE
 **`server.js · index.html · neural.js · main.js`**
 Pure Vanilla JS · Express 5 · No bundler
-Anthropic SDK · Canvas API · dotenv
+Canvas API · dotenv
 Tailwind CDN · `mix-blend-mode` · perspective
 
 </td>
@@ -180,7 +180,7 @@ Tailwind CDN · `mix-blend-mode` · perspective
 <td align="center">
 
 ### 🔑 SECURITY MODEL
-- Clé Anthropic confinée au serveur
+
 - Input "API key" front = **décoratif**
 - `.env` gitignoré (jamais committé)
 - Aucune donnée client persistée
@@ -269,7 +269,7 @@ Ouvre ensuite **<http://localhost:3000>** dans ton navigateur. Bouge la souris :
 
 ## 🔑 Sécurité
 
-- La clé Anthropic vit **exclusivement** dans `.env` côté serveur (jamais exposée au client)
+
 - Le champ « clé API » visible dans l'UI est **purement décoratif**
 - `.env` est gitignoré : ne **jamais** committer de secret
 - Aucune donnée utilisateur n'est persistée — tout reste en mémoire côté navigateur
