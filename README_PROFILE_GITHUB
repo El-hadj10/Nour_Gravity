@@ -1,42 +1,76 @@
-# NOUR_GRAVITY
-
 <p align="center">
-	<img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"/>
-	<img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white"/>
-	<img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white"/>
-	<img src="https://img.shields.io/badge/Anthropic-FFB300?style=for-the-badge&logo=anthropic&logoColor=black"/>
-	<img src="https://img.shields.io/badge/Portfolio%20Ready-FBBF24?style=for-the-badge&logo=star&logoColor=black"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0B0C10,50:1a1a2e,100:0e3a5f&height=200&section=header&text=NOUR_GRAVITY&fontSize=58&fontColor=FBBF24&animation=fadeIn&fontAlignY=38&desc=Le%20Miracle%20Vivant%20—%20IA%20·%20Spiritualité%20·%20HUD&descAlignY=62&descSize=14&descColor=78c8ff" width="100%" />
 </p>
 
-![Banner](https://capsule-render.vercel.app/api?type=waving&color=0B0C10&height=180&section=header&text=NOUR_GRAVITY&fontColor=FBBF24&fontSize=48&animation=twinkling)
+<p align="center">
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" />
+  <img src="https://img.shields.io/badge/Express_5-000000?style=for-the-badge&logo=express&logoColor=white" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" />
+  <img src="https://img.shields.io/badge/Anthropic_Claude-FFB300?style=for-the-badge&logo=anthropic&logoColor=black" />
+  <img src="https://img.shields.io/badge/Canvas_5D-ff6600?style=for-the-badge&logo=html5&logoColor=white" />
+  <img src="https://img.shields.io/badge/HUD_J.A.R.V.I.S-78c8ff?style=for-the-badge&logo=cyberdefenders&logoColor=black" />
+  <img src="https://img.shields.io/badge/Portfolio_Ready-FBBF24?style=for-the-badge&logo=star&logoColor=black" />
+</p>
 
-**Projet d’alignement IA & spiritualité**
+<p align="center">
+  <a href="https://github.com/El-hadj10/Nour_Gravity">
+    <img src="https://img.shields.io/badge/Dépôt-Nour__Gravity-181717?style=for-the-badge&logo=github&logoColor=white" />
+  </a>
+  <a href="https://github.com/El-hadj10/L-invisible-">
+    <img src="https://img.shields.io/badge/✦_Repo_Soeur-L--invisible--6e44ff?style=for-the-badge&logo=github&logoColor=white" />
+  </a>
+</p>
+
+> 🌙 **Projet d'alignement IA & spiritualité — version vivante.**
 
 ---
 
 ## 🚀 Vision
-Créer un Jarvis spirituel, fusionnant la puissance de Claude (Anthropic) et une UI antigravity premium, pour générer des invocations personnalisées, alignées sur la Sagesse d’Al-Baqarah.
+
+Créer un **Jarvis spirituel** : la puissance de Claude (Anthropic) drapée dans un HUD vivant, où un **champ neuronal 5D** réagit au curseur comme une membrane consciente, et où chaque invocation s'écrit caractère par caractère, alignée sur la sagesse d'**Al-Baqarah**.
 
 ## 🧬 Stack
-- HTML5, Tailwind CSS, Vanilla JS
-- Node.js, Express, dotenv
-- Anthropic Claude 3.5 Sonnet (API)
 
-## 🌀 Fonctionnalités
-- Génération d’invocations structurées (nom, arabe, translittération, essence)
-- Résolution personnalisée (problème → invocation curative)
-- UI immersive, effets antigravity, dark mode
-- Mode fallback local si API indisponible
+- **Backend** — Node.js · Express 5 · dotenv
+- **IA** — Anthropic Claude 3.5 Sonnet (proxy serveur)
+- **Frontend** — HTML5 · Tailwind CSS (CDN) · Vanilla JS (zéro bundler)
+- **Visuel** — Canvas API · perspective 3D · `mix-blend-mode` · `requestAnimationFrame`
+
+## 🌀 Fonctionnalités clés
+
+| Module | Description |
+|--------|-------------|
+| 🧠 **Champ Neuronal 5D** | ~140 nœuds en (x,y,z) · synapses dynamiques · signaux pulsés · champ de force du curseur |
+| 🛰️ **HUD Jarvis** | Coins brackets · scan-line · boot sequence · badge `NEURAL FIELD` temps-réel |
+| 🤲 **Matrice Invocation 99** | Flux séquentiel · 4 types (ACTION · LOI · LUMIÈRE · SOUVERAINETÉ) |
+| 🔮 **Résolution Finale** | Épreuve utilisateur → invocation curative personnalisée |
+| ✍️ **Typewriter ambré** | Les essences générées s'écrivent avec caret clignotant |
+| 🎨 **Antigravity Cards** | Micro-rotations 3D des cartes au survol |
+
+## 🔑 Sécurité
+
+- Clé Anthropic confinée dans `.env` côté serveur · jamais exposée au client
+- `.env` gitignoré · aucune donnée utilisateur persistée
 
 ## 🎨 Inspirations
-- [L-invisible-](https://github.com/El-hadj10/L-invisible-) (structure, minimalisme, spiritualité)
-- Portfolio Nour-Net (bannières, badges, philosophie)
+
+- [**L-invisible-**](https://github.com/El-hadj10/L-invisible-) — structure, minimalisme, spiritualité narrative
+- **J.A.R.V.I.S** — HUD vivant, calme de la machine consciente
+- **Al-Baqarah** — Al-Khilafa, Unicité de la Source
 
 ## 📜 Philosophie
-> "L’invocation est la lumière qui traverse l’ombre. L’alignement, la clé."
+
+> "L'invocation est la lumière qui traverse l'ombre. L'alignement, la clé."
+>
+> Nour_Gravity n'est pas une démo. C'est un **miracle vivant**.
 
 ---
 
-**Auteur : Nour (El-hadj10)**
+<p align="center">
+  <strong>Auteur · Nour (El-hadj10)</strong><br/>
+  <a href="https://github.com/El-hadj10/Nour_Gravity">→ Voir le projet complet</a>
+</p>
 
-[Voir le projet complet](https://github.com/El-hadj10/Nour_Gravity)
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0e3a5f,50:1a1a2e,100:0B0C10&height=60&section=footer" width="100%" />
+</p>
