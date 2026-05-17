@@ -1,21 +1,34 @@
-# README PROFILE GITHUB
+# NOUR_GRAVITY
 
-## Projet
-Nour_Gravity
+![Banner](https://capsule-render.vercel.app/api?type=waving&color=0B0C10&height=180&section=header&text=NOUR_GRAVITY&fontColor=FBBF24&fontSize=48&animation=twinkling)
 
-## Statut
-En cours de developpement.
+**Projet d’alignement IA & spiritualité**
 
-## Objectif
-Ce fichier servira de base pour presenter le projet sur GitHub, en coherence avec le code final.
+---
 
-## Sections a completer plus tard
-- Vision du projet
-- Stack technique
-- Architecture
-- Fonctionnalites principales
-- Installation locale
-- Utilisation
-- Securite de l API
-- Roadmap
-- Auteur
+## 🚀 Vision
+Créer un Jarvis spirituel, fusionnant la puissance de Claude (Anthropic) et une UI antigravity premium, pour générer des invocations personnalisées, alignées sur la Sagesse d’Al-Baqarah.
+
+## 🧬 Stack
+- HTML5, Tailwind CSS, Vanilla JS
+- Node.js, Express, dotenv
+- Anthropic Claude 3.5 Sonnet (API)
+
+## 🌀 Fonctionnalités
+- Génération d’invocations structurées (nom, arabe, translittération, essence)
+- Résolution personnalisée (problème → invocation curative)
+- UI immersive, effets antigravity, dark mode
+- Mode fallback local si API indisponible
+
+## 🎨 Inspirations
+- [L-invisible-](https://github.com/El-hadj10/L-invisible-) (structure, minimalisme, spiritualité)
+- Portfolio Nour-Net (bannières, badges, philosophie)
+
+## 📜 Philosophie
+> "L’invocation est la lumière qui traverse l’ombre. L’alignement, la clé."
+
+---
+
+**Auteur : Nour (El-hadj10)**
+
+[Voir le projet complet](https://github.com/El-hadj10/Nour_Gravity)
