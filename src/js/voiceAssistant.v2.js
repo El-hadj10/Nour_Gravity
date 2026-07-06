@@ -10,12 +10,13 @@
 //   pas explicitement demandé l'arrêt via stop().
 
 class VoiceAssistant {
-  constructor({ onTranscript, onStart, onEnd, lang = 'fr-FR' } = {}) {
+  constructor({ onTranscript, onStart, onEnd, onListeningChange, lang = 'fr-FR' } = {}) {
     this.recognition = null;
     this.synth = window.speechSynthesis;
     this.onTranscript = onTranscript;
     this.onStart = onStart;
     this.onEnd = onEnd;
+    this.onListeningChange = onListeningChange;
     this.lang = lang;
     this.isListening = false;          // session de reconnaissance active
     this._shouldBeListening = false;    // intention utilisateur
@@ -56,6 +57,7 @@ class VoiceAssistant {
       if (fatal) {
         this._shouldBeListening = false;
         this.isListening = false;
+        if (this.onListeningChange) this.onListeningChange(false);
         if (this.onEnd) this.onEnd();
       }
       console.warn(
@@ -101,7 +103,10 @@ class VoiceAssistant {
     if (!this.recognition) return;
     // Ne pas relancer si on écoute déjà ou si un restart est en attente.
     if (this.isListening || this._restartTimer) return;
-    this._shouldBeListening = true;
+    if (!this._shouldBeListening) {
+      this._shouldBeListening = true;
+      if (this.onListeningChange) this.onListeningChange(true);
+    }
     try {
       this.recognition.start();
     } catch (e) {
@@ -109,9 +114,19 @@ class VoiceAssistant {
     }
   }
 
+  // État "logique" du micro (intention utilisateur).
+  // Distinct de `isListening` (état réel de la session reconnaissance)
+  // qui peut osciller pendant les redémarrages silencieux.
+  get isActive() {
+    return this._shouldBeListening;
+  }
+
   stop() {
     if (!this.recognition) return;
-    this._shouldBeListening = false;
+    if (this._shouldBeListening) {
+      this._shouldBeListening = false;
+      if (this.onListeningChange) this.onListeningChange(false);
+    }
     if (this._restartTimer) {
       clearTimeout(this._restartTimer);
       this._restartTimer = null;

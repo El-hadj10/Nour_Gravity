@@ -62,15 +62,20 @@ const va = new window.VoiceAssistant({
         // Synthèse vocale d'acquittement rapide
         va.speak(`Commande reçue : ${txt}. Analyse en cours.`);
     },
-    onStart: () => { halo.style.opacity = '1'; },
-    onEnd: () => { halo.style.opacity = '0'; },
+    // Le halo suit l'INTENTION de l'utilisateur (et non l'état réel
+    // de la session reconnaissance, qui passe par des coupures/remarrages
+    // invisibles grâce au mode continu + auto-restart).
+    // Évite le clignotement pendant les ~200ms de redémarrage.
+    onListeningChange: (active) => {
+        halo.style.opacity = active ? '1' : '0';
+    },
     lang: 'fr-FR'
 });
 window.__jarvisVA = va;
 
 // Gestion du clic sur le bouton micro
 micBtn.addEventListener('click', () => {
-    if (va.isListening) {
+    if (va.isActive) {
         va.stop();
     } else {
         va.listen();
@@ -79,10 +84,10 @@ micBtn.addEventListener('click', () => {
 
 // Optionnel : touche raccourci (Espace maintenu)
 window.addEventListener('keydown', (e) => {
-    if (e.code === 'Space' && !va.isListening) va.listen();
+    if (e.code === 'Space' && !va.isActive) va.listen();
 });
 window.addEventListener('keyup', (e) => {
-    if (e.code === 'Space' && va.isListening) va.stop();
+    if (e.code === 'Space' && va.isActive) va.stop();
 });
 // === Fin assistant vocal ===
 /**
