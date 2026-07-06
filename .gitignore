@@ -4,6 +4,6 @@ node_modules/
 # Artefacts runtime du smoke JARVIS (régénérés à chaque run, jamais versionnés)
 .smoke-logs/
 
-# Métadonnées internes Freebuff (tooling local, hors périmètre projet)
+# Métadonnées internes Codebuff — définitions d'agents IA, tooling local hors périmètre projet
 .agents/
 knowledge.md
