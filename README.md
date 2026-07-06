@@ -26,6 +26,8 @@
 
 > 🌙 **L'alignement fluide entre invocation, intention et technologie.**
 
+> ✦ **J.A.R.V.I.S Core** — l'interface intègre désormais une **console de délégation** (voix + texte) routée vers 6 agents spécialisés (`file_picker`, `code_searcher`, `basher`, `researcher`, `orchestrator`, `delegator`). Voir [**`docs/JARVIS_RAPPORT.md`**](docs/JARVIS_RAPPORT.md) pour l'architecture complète.
+
 ---
 
 ## 🌌 Présentation
