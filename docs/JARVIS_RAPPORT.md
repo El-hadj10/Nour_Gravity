@@ -321,26 +321,26 @@ stat, file, df, du, whoami, date, echo, tree, which, env, printenv`).
 ```bash
 # 1. Lever le serveur
 cd /home/el-hadj-ousmane/Bureau/Nour_Gravity
-node server.js          # http://localhost:3000
+node server.js          # http://localhost:8080
 
 # 2. Lister les agents disponibles
-curl -s http://localhost:3000/api/jarvis/agents | python3 -m json.tool
+curl -s http://localhost:8080/api/jarvis/agents | python3 -m json.tool
 
 # 3. Pinger le moteur
-curl -s http://localhost:3000/api/jarvis/health | python3 -m json.tool
+curl -s http://localhost:8080/api/jarvis/health | python3 -m json.tool
 
 # 4. Tester un file_picker
-curl -s -X POST http://localhost:3000/api/jarvis/command \
+curl -s -X POST http://localhost:8080/api/jarvis/command \
      -H "Content-Type: application/json" \
      -d '{"command":"trouve le fichier jarvis","source":"curl"}' | python3 -m json.tool
 
 # 5. Tester un basher (lecture seule)
-curl -s -X POST http://localhost:3000/api/jarvis/command \
+curl -s -X POST http://localhost:8080/api/jarvis/command \
      -H "Content-Type: application/json" \
      -d '{"command":"lance ls -la src"}' | python3 -m json.tool
 
 # 6. Tester un delegator (sub-process)
-curl -s -X POST http://localhost:3000/api/jarvis/command \
+curl -s -X POST http://localhost:8080/api/jarvis/command \
      -H "Content-Type: application/json" \
      -d '{"command":"délègue : trouve boot overlay"}' | python3 -m json.tool
 ```

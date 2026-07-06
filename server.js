@@ -7,7 +7,7 @@ const jarvis = require('./jarvis/delegator');
 dotenv.config();
 
 const app = express();
-const PORT = Number(process.env.PORT) || 3000;
+const PORT = Number(process.env.PORT) || 8080;
 const apiKey = process.env.NOUR_GRAVITY_API_KEY || '';
 const staticDir = path.join(__dirname, 'src');
 

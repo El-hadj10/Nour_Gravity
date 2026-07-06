@@ -266,7 +266,7 @@ echo 'NOUR_GRAVITY_API_KEY=sk-ant-...' > .env
 node server.js
 ```
 
-Ouvre ensuite **<http://localhost:3000>** dans ton navigateur. Bouge la souris : le champ neuronal réagit en temps réel.
+Ouvre ensuite **<http://localhost:8080>** dans ton navigateur. Bouge la souris : le champ neuronal réagit en temps réel.
 
 ---
 
