@@ -2,6 +2,8 @@ const express = require('express');
 const dotenv = require('dotenv');
 const path = require('path');
 
+const jarvis = require('./jarvis/delegator');
+
 dotenv.config();
 
 const app = express();
@@ -47,10 +49,73 @@ Génère une Invocation Finale salvatrice et sur-mesure au format JSON, directem
     return res.status(501).json({ ok: false, error: 'IA désactivée.' });
 });
 
+// =========================================================================
+// J.A.R.V.I.S — Bus de délégation
+// =========================================================================
+
+app.get('/api/jarvis/agents', (_req, res) => {
+    res.json({
+        ok: true,
+        agents: jarvis.listAgents(),
+        allowlist: [...jarvis.BASHER_ALLOWLIST].sort(),
+        delegator_target: {
+            sibling: 'chasseur-onirique',
+            cli: jarvis.CHASSEUR_ROOT,
+        },
+        dispatched_at: new Date().toISOString(),
+    });
+});
+
+app.get('/api/jarvis/health', (_req, res) => {
+    res.json({
+        ok: true,
+        agents_registered: jarvis.AGENTS.length,
+        delegator_target: jarvis.CHASSEUR_ROOT,
+        timestamp: new Date().toISOString(),
+    });
+});
+
+app.post('/api/jarvis/command', async (req, res) => {
+    const body = req.body || {};
+    const input = typeof body.command === 'string'
+        ? body.command
+        : typeof body.text === 'string'
+            ? body.text
+            : '';
+    const source = typeof body.source === 'string' ? body.source : 'console';
+
+    if (!input.trim()) {
+        return res.status(400).json({
+            ok: false,
+            error: 'Aucune commande reçue (champ "command" vide).',
+        });
+    }
+    if (input.length > 1200) {
+        return res.status(413).json({
+            ok: false,
+            error: 'Commande trop longue (>1200 caractères).',
+        });
+    }
+
+    try {
+        const result = await jarvis.dispatch(input, { source });
+        res.json(result);
+    } catch (err) {
+        console.error('[JARVIS] echec dispatch:', err);
+        res.status(500).json({
+            ok: false,
+            error: `Erreur interne du moteur J.A.R.V.I.S : ${err.message}`,
+        });
+    }
+});
+
 app.use((_req, res) => {
     res.sendFile(path.join(staticDir, 'index.html'));
 });
 
 app.listen(PORT, () => {
+    const agents = jarvis.listAgents().map(a => a.name).join(', ');
     console.log(`Nour_Gravity server actif sur http://localhost:${PORT}`);
+    console.log(`J.A.R.V.I.S core : ${jarvis.AGENTS.length} agents enregistrés (${agents})`);
+    console.log(`Delegator cible  : ${jarvis.CHASSEUR_ROOT}`);
 });

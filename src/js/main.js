@@ -55,13 +55,18 @@ const va = new window.VoiceAssistant({
     onTranscript: (txt) => {
         // Affiche la commande vocale dans la console ou dans l'UI
         console.log('🎤 Commande vocale :', txt);
-        // Exemple : va.speak('Vous avez dit : ' + txt);
-        // Tu peux ici déclencher une action selon la commande reconnue
+        // Le transcript vocal est forwardé au bus J.A.R.V.I.S :
+        if (window.jarvisConsole && typeof window.jarvisConsole.submit === 'function') {
+            window.jarvisConsole.submit(txt);
+        }
+        // Synthèse vocale d'acquittement rapide
+        va.speak(`Commande reçue : ${txt}. Analyse en cours.`);
     },
     onStart: () => { halo.style.opacity = '1'; },
     onEnd: () => { halo.style.opacity = '0'; },
     lang: 'fr-FR'
 });
+window.__jarvisVA = va;
 
 // Gestion du clic sur le bouton micro
 micBtn.addEventListener('click', () => {
@@ -97,10 +102,17 @@ let neuralField = null;
 
 document.addEventListener('DOMContentLoaded', () => {
     runBootSequence();
+    // Expose le NeuralField globalement pour permettre à d'autres modules
+    // (jarvis-console.js par ex.) de déclencher des bursts.
     neuralField = window.NourNeural && window.NourNeural.mount('neural-canvas');
+    window.__nourNeural = neuralField;
     initAntigravityEffects();
     initApiFlux();
     initInvocationFinaleFlux();
+    // Initialise le bus de délégation J.A.R.V.I.S
+    if (window.jarvisConsole && typeof window.jarvisConsole.init === 'function') {
+        window.jarvisConsole.init();
+    }
 });
 
 /**
